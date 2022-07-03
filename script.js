@@ -3,7 +3,7 @@ var imgUrls = ["/img/s.webp", "/img/m.webp", "/img/l.webp"]
 var imgBytes = [117902, 1263924, 10914532]
 var imgi = 1
 var pingInterval = 100
-var pingUrl = "https://ip.flares.cloud/cdn-cgi/trace"
+var pingUrl = "/cdn-cgi/trace"
 var respondTimeout = 4000
 var speedTimeout = 30000
 
@@ -162,7 +162,7 @@ $("#test-respond").click(function () {
         selectedRows.forEach(function (row, i) {
             var one = row.getData()
             setTimeout(function () {
-                addr = "//" + one.ip.replace(/\./g, "-") + urlprefix + pingUrl + "?" + Math.random()
+                addr = "https://cors-anywhere.hgnet.workers.dev/?"+"//" + one.ip.replace(/\./g, "-") + urlprefix + pingUrl + "?" + Math.random()
                 // break cache (set the header of request or origin is not enough in Firefox)
                 tcping(addr, tcpingCallback, one.id)
             }, pingInterval * (i + sn / 100))
@@ -283,7 +283,7 @@ $("#test-speed").click(function () {
             var one = row.getData()
             sList.push({
                 id: one.id,
-                addr: "//" + one.ip.replace(/\./g, "-") + urlprefix + imgUrls[imgi] + "?" + Math.random()
+                addr: "https://cors-anywhere.hgnet.workers.dev/?"+"//" + one.ip.replace(/\./g, "-") + urlprefix + imgUrls[imgi] + "?" + Math.random()
             })
         })
         speedRecur(sList, 0) // Make sure run in turn
