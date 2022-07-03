@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Cloudflare IP Batch Test Tool including HTTP respond time, regition detection and download speed test">
-  <title>Cloudflare IP Batch Test Tool +</title>
+  <title>Cloudflare IP 批量测试工具+</title>
   <link href="https://unpkg.com/tabulator-tables@4.7.2/dist/css/tabulator_site.min.css" rel="stylesheet">
   <link href="/style.css" rel="stylesheet">
   <script type="text/javascript" src="https://unpkg.com/jquery@3.5.1/dist/jquery.js"></script>
@@ -14,28 +14,28 @@
 
 <body>
 
-  <h1>Cloudflare IP Batch Test Tool +</h1>
+  <h1>Cloudflare IP 批量测试工具 +</h1>
  
 
 
   <div class="table panel">
     <div class="line">
       <div class="col">
-        <button class="button big" id="select-all" status=0>Select All</button>
+        <button class="button big" id="select-all" status=0>选择全部</button>
         <div class="line">
           <input id="select-number" class="border" type="number" value="20" min="1" max="100"></input>
-          <button class="button" id="select-random"> Random </button>
+          <button class="button" id="select-random"> 随机</button>
         </div>
       </div>
       <div class="col">
-        <button class="button big" id="test-respond" status=0>Test Respond</button>
+        <button class="button big" id="test-respond" status=0>响应测试</button>
         <div class="line">
           <select id="img-select" class="border">
             <option value="0">115KB</option>
             <option value="1" selected="selected">1.20MB</option>
             <option value="2">10.4MB</option>
           </select>
-          <button class="button" id="test-speed" status=0> Speed </button>
+          <button class="button" id="test-speed" status=0>速度测试</button>
         </div>
       </div>
     </div>
@@ -45,14 +45,13 @@
 
   <div id="main-table"></div>
   <div class="panel bottom">
-    <div class="button" id="download" status=0>Data Sheet</div>
+    <div class="button" id="download" status=0>导出数据表</div>
   </div>
   <p>Need time to load, only support PC browser</p>
-  <p>Please visit this page in HTTP or cause problem</p>
-  <p>If testing too frequently, you may be blocked by the firewall of your ISP or Cloudflare</p>
-  <p>If testing too much at once, results may not be correct due to the browser’s processing efficiency </p>
-  <p>Feedback via <a href="https://github.com/TulvL/cloudflare-ip-tester">Github</a> is welcome</p>
-  <p>Back to <a href="https://ip.flares.cloud/">simple</a>  version</p>
+  <p>请使用 HTTP 访问此页面否则可能会导致问题</p>
+  <p>如果测试过于频繁，您可能会被 ISP 或 Cloudflare 的防火墙阻止</p>
+  <p>如果一次测试太多，由于浏览器的处理效率，结果可能不正确 </p>
+   <p>返回<a href="https://cf.quickso.cn/">普通</a>  版本</p>
   <br />
   <br />
   <script>
