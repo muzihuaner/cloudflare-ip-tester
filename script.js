@@ -162,7 +162,7 @@ $("#test-respond").click(function () {
         selectedRows.forEach(function (row, i) {
             var one = row.getData()
             setTimeout(function () {
-                addr = "https://cors-anywhere.hgnet.workers.dev/?"+"http://" + one.ip.replace(/\./g, "-") + urlprefix + pingUrl + "?" + Math.random()
+                addr = "//" + one.ip.replace(/\./g, "-") + urlprefix + pingUrl + "?" + Math.random()
                 // break cache (set the header of request or origin is not enough in Firefox)
                 tcping(addr, tcpingCallback, one.id)
             }, pingInterval * (i + sn / 100))
